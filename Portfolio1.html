@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @keyframes swap {
+            0%, 16%{
+                transform: translateX(0);
+            }
+            16%, 32%{
+                transform: translateX(-350px)
+            }
+            48%, 64%{
+                transform: translateX(-700px);
+            }
+            80%, 100%{
+                transform: translateX(-1050px);
+            }
+        }
+        @media screen and (min-width: 1143px){
+            .skill{
+                padding: 20px;
+                border: 2px solid black;
+                transition: all 0.7s;
+                width: 80vw;
+                margin: 50px auto;
+                height: 370px;
+                border-radius: 25px;
+                background-color: rgb(157, 255, 255);
+            }
+            .skill:hover{
+                background-color: rgb(80, 255, 255);
+                scale: 1.1;
+            }
+            .skill img{
+                height: 350px;
+            }
+            .imgr{
+                float: right;
+            }
+            .imgl{
+                float: left;
+            }
+        }
+        @media screen and (max-width: 1142px){
+            .skill{
+                padding: 20px;
+                border: 2px solid black;
+                transition: all 0.7s;
+                width: 80vw;
+                text-align: center;
+                margin: 50px auto;
+                border-radius: 25px;
+                background-color: rgb(157, 255, 255);
+            }
+            .skill:hover{
+                background-color: rgb(80, 255, 255);
+            }
+            .skill img{
+                height: 250px;
+            }
+            .imgr{
+            }
+            .imgl{
+            }
+        }
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        body{
+            margin: 0;
+            background-color: rgb(213, 242, 242);
+        }
+        h2{
+            margin-top: 0 ;
+            text-align: center;
+        }
+        .block img{
+            width: 350px;
+            height: 200px;
+            position: relative;
+        }
+        .block img:hover{
+            cursor: pointer;
+        }
+        .proect{
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        a{
+            color: initial;
+            text-decoration: none;
+        }
+        .block a{
+            animation: 7s swap ease-in-out 0s infinite;
+        }
+        button{
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        figure{
+            width: 350px;
+            height: auto;
+        }
+        .anim{
+            width: 350px;
+            height:auto;
+            border: 4px solid black;
+            overflow: hidden;
+        }
+        .second_c{
+            display: flex;
+        }
+        .first_c{
+            display: flex;
+        }
+        .block {
+            display: none;
+            width: 350px;
+            height:auto;
+            border-radius: 5%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .block:target {
+            display: flex;
+        }
+        .select_colection{
+            display: flex;
+            height: 50px;
+            width: 390px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: flex;
+        }
+        .select_colection a{
+            display: flex;
+            border-radius: 15%;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            text-align: center;
+            width: 33.33%;
+            height: 75%;
+            margin: 0 10px;
+            background-color: rgb(157, 255, 255);
+            transition: all 0.7s ;
+        }
+        .select_colection a:hover{
+            scale: 1.2;
+            background-color: rgb(80, 255, 255);
+        }
+        .colection_menu {
+            position: relative;
+            background-color: rgb(182, 219, 255);
+            border: 2px solid rgb(44, 44, 44);
+            width: 395px;
+            height: 320px;
+            text-align: center;
+            margin: 50px auto;
+            border-radius: 10%;
+            padding: 45px;
+        }
+        .skills {
+            border-bottom: 2px solid rgb(44, 44, 44);
+            height: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(182, 219, 255);
+        }
+
+        .skills div{
+            height: 100%;
+            display: flex;
+            text-align: center;
+        }
+        .skills a{
+            vertical-align: middle;
+            display: flex;
+            width: auto;
+            border-radius: 15px;
+            padding: 0 1vw;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        .skills a:hover{
+            background-color: rgb(121, 188, 255); 
+        }
+        .skills img{
+            height: 50%;
+        }
+        .i_am{
+            text-align: center;
+        }
+        .i_am h1{
+            margin-top: 70px;
+        }
+        hr{
+            width: 97%;
+            border: none;
+            border-top: 4px solid black;
+        }
+        p{
+            text-align: center;
+        }
+        footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer p{
+            margin: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills">
+        <a href="#dez">
+            <img src="./icons8-дизайнер-50.png" alt="">
+            Дизайнер
+        </a>
+        <a href="#dev">
+            <img src="./icons8-разработчик-30.png" alt="">
+            Розробник
+        </a>
+        <a href="#test">
+            <img src="./icons8-баг-50.png" alt="">
+            Тестувальник (QA Engineer)
+        </a>
+        <a href="#admin">
+            <img src="./icons8-администратор-50.png" alt="">
+            Адміністратор систем (System Administrator)
+        </a>
+    </div>
+    <div class="i_am">
+        <h1>Олександр Ковальчук</h1>
+    </div>
+    <div class="skill" id="dez">
+        <img src="./pngwing.com.png" alt="" class="imgl">
+        <div class="text">
+            <h2>Дизайнер</h2>
+            <p>
+                Я - дизайнер з великим прагненням до творчості та створення естетично привабливих та функціональних дизайнів. Моя робота охоплює широкий спектр областей, включаючи веб-дизайн, графічний дизайн, UI/UX дизайн та ілюстрації.
+                Мої проекти відображають мою відданість вдосконаленню користувацького досвіду та відображенню бренду через креативний дизайн. Кожен проект вимагає індивідуального підходу та врахування унікальних потреб клієнтів.
+                Мій підхід до дизайну базується на поєднанні естетики, функціональності та відмінного користувацького досвіду. Я використовую широкий спектр інструментів та технік, щоб забезпечити ефективність та відповідність моїм клієнтам.
+                З моєю допомогою ваш бізнес матиме стильний та привабливий образ, що відображатиме вашу унікальність та професіоналізм.</p>
+        </div>
+    </div>
+    <div class="skill" id="dev">
+        <div class="text">
+        <img src="./pngwing.comvs.png" alt="" class="imgr">
+            <h2>Розробник</h2>
+            <p>
+                Я розробник з великим бажанням створювати програмне забезпечення, яке вирішує реальні проблеми та полегшує життя користувачів. Мій досвід включає участь у різноманітних проектах з розробки програмного забезпечення, починаючи від веб-сайтів до великих веб-додатків та мобільних застосунків.
+                У моєму портфоліо ви знайдете різноманітні проекти, над якими я працював. Вони охоплюють широкий спектр технологій та інструментів, включаючи використання мов програмування, таких як JavaScript, Python, Java, та багато інших. Я також маю досвід роботи з різними фреймворками та бібліотеками, такими як React.js, Angular, Django, та інші.
+                Мій підхід до розробки полягає в створенні ефективного, масштабованого та легкопідтримуваного коду. Я завжди відкритий до вивчення нових технологій та методів розробки, щоб забезпечити успішну реалізацію будь-яких проектів. З моєю допомогою ваші ідеї матимуть втілення в якісному програмному продукті, який відповідає найвищим стандартам якості та ефективності.
+                Я завжди відкритий до нових викликів та готовий долучитися до вашого проєкту. Давайте створимо разом щось надзвичайне!</p>
+        </div>
+    </div>
+    <div class="skill" id="test">
+        <img src="./pngwing.comtest.png" alt="" class="imgl">
+        <div class="text">
+            <h2>Тестувальник (QA Engineer)</h2>
+            <p>
+                Я є професіоналом у галузі тестування програмного забезпечення з глибоким розумінням процесу розробки та тестування.
+                У своїй ролі QA Engineer я відповідаю за забезпечення якості програмного забезпечення шляхом виявлення та виправлення дефектів та недоліків у продукті. Мій досвід включає участь у всіх етапах життєвого циклу розробки програмного забезпечення, від аналізу вимог до випуску продукту.
+                Я маю досвід у валідації та верифікації функціональності програмного забезпечення, а також у розробці та виконанні автоматизованих тестів для забезпечення стабільності та надійності програмних продуктів. Мій підхід до тестування базується на систематичному та комплексному аналізі, а також на пошуку рішень для підвищення якості програмного забезпечення.
+                Я завжди стежу за новими тенденціями у галузі тестування та використовую найсучасніші методики та інструменти для забезпечення ефективності та ефективності моєї роботи. З моєю допомогою ваші програмні продукти будуть відповідати вимогам якості та вражатимуть користувачів своєю надійністю та стабільністю.
+                Дозвольте мені допомогти вам забезпечити успішну та безпроблемну роботу вашого програмного забезпечення. Зв'яжіться зі мною, і ми разом досягнемо ваших цілей!</p>
+        </div>
+    </div>
+    <div class="skill" id="admin">
+        <div class="text">
+        <img src="./pngwing.comadmin.png" alt="" class="imgr">
+            <h2>Адміністратор систем (System Administrator)</h2>
+            <p>
+                Я є досвідченим адміністратором систем з глибоким розумінням інфраструктури та мережевих технологій.
+                У своїй ролі адміністратора систем я відповідаю за ефективне управління та підтримку інформаційних систем, мереж та серверів у вашій компанії. Мій досвід включає налаштування та адміністрування операційних систем, віртуалізацію, моніторинг системи та забезпечення безпеки даних.
+                Я маю досвід у впровадженні нових технологій та інфраструктурних проектів, а також у вирішенні проблем та неполадок, що виникають у процесі експлуатації систем. Мій підхід до адміністрування систем базується на принципах ефективності, надійності та безпеки.
+                Я завжди готовий до співпраці з іншими членами команди та стежу за новими тенденціями та технологіями у галузі системного адміністрування. Моя мета - забезпечити стабільну та надійну роботу вашої інфраструктури, щоб ви могли зосередитися на досягненні ваших бізнес-цілей.
+                Дозвольте мені допомогти вам забезпечити ефективне функціонування вашої IT-інфраструктури. Зв'яжіться зі мною, і ми разом досягнемо успіху!</p>
+        </div>
+    </div>
+    <div class="colection_menu">
+        <h2>Мої роботи</h2>
+        <div class="select_colection">
+            <a href="#toggle1">Сolect._1</a>
+            <a href="#toggle2">Сolect._2</a>
+            <a href="#toggle3">Сolect._3</a>
+            <a href="#toggle4">Сolect._4</a>
+        </div>
+        <div id="toggle1" class="block">
+            <a href="https://github.com/DudiyMaksim/Module-5-Tables-Module-6-Positioning.-Web-page-layout-in-blocks">
+                <figure class="proect">
+                    <p>Таблиця</p>
+                    <img src="./clipboard_image_2e226a5b6630bb69.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-5-Tables-Module-6-Positioning.-Web-page-layout-in-blocks">
+                <figure class="proect">
+                    <p>Вкладене меню</p>
+                    <img src="./clipboard_image_27c7ce3887f02c8d.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-5-Tables-Module-6-Positioning.-Web-page-layout-in-blocks">
+                <figure class="proect">
+                    <p>Біографія</p>
+                    <img src="./зображення_viber_2024-02-24_18-52-24-578.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-5-Tables-Module-6-Positioning.-Web-page-layout-in-blocks">
+                <figure class="proect">
+                    <p>Таблиця</p>
+                    <img src="./clipboard_image_2e226a5b6630bb69.png" alt="">
+                </figure>
+            </a>
+        </div>
+        <div id="toggle2" class="block">
+            <a href="https://github.com/DudiyMaksim/Module-6-Positioning.-Layout-of-web-pages-in-blocks-Module-7-Responsive-design">
+                <figure class="proect">
+                    <p>Імітація меню завантаження</p>
+                    <img src="./clipboard_image_8dcb3094979f981e.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-6-Positioning.-Layout-of-web-pages-in-blocks-Module-7-Responsive-design">
+                <figure class="proect">
+                    <p>@Media</p>
+                    <img src="./clipboard_image_66d026beec6b426c.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-6-Positioning.-Layout-of-web-pages-in-blocks-Module-7-Responsive-design">
+                <figure class="proect">
+                    <p>Імітація меню</p>
+                    <img src="./зображення_viber_2024-02-24_18-53-19-453.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Module-6-Positioning.-Layout-of-web-pages-in-blocks-Module-7-Responsive-design">
+                <figure class="proect">
+                    <p>Імітація меню завантаження</p>
+                    <img src="./clipboard_image_8dcb3094979f981e.png" alt="">
+                </figure>
+            </a>
+        </div>
+        <div id="toggle3" class="block">
+            <a href="https://github.com/DudiyMaksim/-CSS3">
+                <figure class="proect">
+                    <p>Простий годиник</p>
+                    <img src="./clipboard_image_fb14e64fb9e16eed.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/-CSS3">
+                <figure class="proect">
+                    <p>Анімація відкритя дверей</p>
+                    <img src="./clipboard_image_23ed5c3cdbe3f10f.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/-CSS3">
+                <figure class="proect">
+                    <p>...</p>
+                    <img src="./clipboard_image_9e8fc332f70825e2.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/-CSS3">
+                <figure class="proect">
+                    <p>Простий годиник</p>
+                    <img src="./clipboard_image_fb14e64fb9e16eed.png" alt="">
+                </figure>
+            </a>
+        </div>
+        <div id="toggle4" class="block">
+            <a href="https://github.com/DudiyMaksim/Graphics-in-web-design.-Optimization-of-graphics.-Hyperlinks.-Principles-of-website-navigation">
+                <figure class="proect">
+                    <p>Холодильник</p>
+                    <img src="./clipboard_image_25e869837109e47.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Graphics-in-web-design.-Optimization-of-graphics.-Hyperlinks.-Principles-of-website-navigation">
+                <figure class="proect">
+                    <p>Просте меню</p>
+                    <img src="./clipboard_image_99cbc5a96f0b445.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Graphics-in-web-design.-Optimization-of-graphics.-Hyperlinks.-Principles-of-website-navigation">
+                <figure class="proect">
+                    <p>Тестове розміщення блоків</p>
+                    <img src="./clipboard_image_e8822061c46b31f8.png" alt="">
+                </figure>
+            </a>
+            <a href="https://github.com/DudiyMaksim/Graphics-in-web-design.-Optimization-of-graphics.-Hyperlinks.-Principles-of-website-navigation">
+                <figure class="proect">
+                    <p>Холодильник</p>
+                    <img src="./clipboard_image_25e869837109e47.png" alt="">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p class="text_">Телефон : +380996577893</p>
+        <p class="text_">Gmail : maksdudiya25@gmail.com</p>
+    </footer>
+</body>
+</html>
